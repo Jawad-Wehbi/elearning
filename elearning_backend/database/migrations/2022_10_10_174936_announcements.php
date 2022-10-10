@@ -13,7 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('announcements', function (Blueprint $table) {
+            $table->string('announcement-title');
+            $table->string('announcement-content');
+            $table->timestamps();
+        });
     }
 
     /**
