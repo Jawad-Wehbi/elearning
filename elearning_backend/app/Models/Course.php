@@ -13,7 +13,5 @@ class Courses extends Model
     protected $fillable = [
         'course_title',
         'course_content',
-        'instructorid',
-        'studentid'
     ];
 }

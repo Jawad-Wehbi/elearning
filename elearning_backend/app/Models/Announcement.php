@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Announcements extends Model
 {
     use HasFactory;
+    protected $connection = 'mongodb';
+    protected $collection = '';
+    protected $fillable = [
+        'Announcement_title',
+        'Announcement_content',
+    ];
 }

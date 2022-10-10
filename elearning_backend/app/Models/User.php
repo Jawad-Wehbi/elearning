@@ -22,6 +22,9 @@ class User extends Authenticatable
         'email',
         'password',
         'user-type',
+        'courses',
+        'announcements',
+        'assignments'
     ];
 
     /**
@@ -43,3 +46,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
+ 
