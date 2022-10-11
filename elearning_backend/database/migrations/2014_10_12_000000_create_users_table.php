@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('user-type');
+            $table->array('courses');
             $table->timestamps();
         });
     }

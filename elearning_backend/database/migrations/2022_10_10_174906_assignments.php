@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('assignments', function (Blueprint $table) {
-            $table->string('assignment-title');
-            $table->string('assignment-content');
+            $table->string('assignment_title')->unique();
+            $table->string('assignment_content');
             $table->timestamps();
         });
     }
