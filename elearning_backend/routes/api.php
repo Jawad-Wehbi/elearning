@@ -17,6 +17,7 @@ Route::controller(AuthController::class)->group(function () {
 Route::post('addUser', [AdminController::class, 'addStudentOrInstructor']);
 Route::post('addCourse', [AdminController::class, 'addCourses']);
 Route::post('addStudent', [InstructorController::class, 'addStudent']);
+Route::post('addAssignment', [InstructorController::class, 'addAssignment']);
 
 // Route::group(["middleware" => "auth:api"], function () {
 //     Route::post('favorites', [UserController::class, 'getFavorites']);

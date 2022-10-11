@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Assignment;
 
 class InstructorController extends Controller
 {
@@ -19,6 +20,18 @@ class InstructorController extends Controller
             'message'=>'Student has been successfully added',
             'status'=>'201',
             'user'=>$user
+        ],201);
+    }
+    public function addAssignment(Request $request)
+    {
+        $assignment = new Assignment();
+        $assignment->assignment_title = $request->get('assignment_title');
+        $assignment->assignment_content = $request->get('assignment_content');
+        $assignment->save();
+        return response()->json([
+            'message'=>'Assignment has been successfully added',
+            'status'=>'201',
+            'assignment'=>$assignment
         ],201);
     }
 }

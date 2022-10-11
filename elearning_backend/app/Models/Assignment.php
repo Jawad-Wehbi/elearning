@@ -4,14 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Auth\User as Authenticatable;
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
-class Assignments extends Model
+class Assignment extends Eloquent
 {
     use HasFactory;
     protected $connection = 'mongodb';
-    protected $collection = '';
+    protected $collection = 'assignments';
     protected $fillable = [
         'Assignment_title',
-        'Assignment_content',
+        'Assignment_content'
     ];
 }
