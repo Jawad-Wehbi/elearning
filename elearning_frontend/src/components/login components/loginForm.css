@@ -1,0 +1,71 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.display {
+	display: none !important;
+}
+.signin-page{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: 100vh;
+    /* background-image: url(Assets/Signin_back.webp); */
+    background-size: cover;
+}
+.signin-block{
+    background-color: rgba(214, 188, 188, 0.26);
+    width: 30vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 100px;
+    margin: auto;
+}
+.signin-header{
+    font-size: 3.5vh;
+}
+.signin-subheader{
+    font-size: 3vh;
+}
+.input{
+    width: 15vw;
+    height: 4vh;
+    border-radius: 50px;
+    border: 0ch;
+    padding: 20px;
+}
+.button{
+    width: 15vh;
+    height: 5vh;
+    border-radius: 50px;
+    border: 0ch;
+    font-weight: 400;
+}
+.signup-block{
+    background-color: rgba(214, 188, 188, 0.26);
+    width: 30vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 100px;
+    margin: auto;
+}
+.signup-link{
+    color: #ced0ca;
+    cursor: pointer;
+}
+.signup-back{
+    cursor: pointer;
+}
+.lists{
+    display: flex;
+    justify-content: space-evenly;
+    width:30vw
+}
