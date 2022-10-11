@@ -41,5 +41,21 @@ class AdminController extends Controller
         ]);
     }
 
-
+    public function assignInstructorToCourse(Request $request)
+    {
+        $user = User::find($request->email);
+        $course = Course::find($request->course);
+        echo $user;
+        echo $course;
+        $user->course()->save($course);
+        // // $instructor = new User();
+        // $announcement->announcement_title = $request->get('announcement_title');
+        // $announcement->announcement_content = $request->get('announcement_content');
+        // $announcement->save();
+        return response()->json([
+            'message' => 'Course has been successfully added to Instructor',
+            'status' => '200',
+            'course' => $course,
+        ]);
+    }
 }
