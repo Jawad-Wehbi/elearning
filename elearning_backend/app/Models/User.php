@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 use Jenssegers\Mongodb\Auth\User as Authenticatable;
+use App\Models\Course;
+use App\Models\Assignment;
+use App\Models\Announcement;
 
 class User extends Authenticatable implements JWTSubject
 {
@@ -24,7 +27,7 @@ class User extends Authenticatable implements JWTSubject
         'user-type',
         'courses',
         'announcements',
-        'assignments'
+        'assignments',
     ];
 
     /**
@@ -32,10 +35,7 @@ class User extends Authenticatable implements JWTSubject
      *
      * @var array<int, string>
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    protected $hidden = ['password', 'remember_token'];
 
     /**
      * The attributes that should be cast.
@@ -46,7 +46,7 @@ class User extends Authenticatable implements JWTSubject
         'email_verified_at' => 'datetime',
     ];
 
-     /**
+    /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *
      * @return mixed
@@ -66,4 +66,18 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
+    public function assignment()
+    {
+        return $this->belongsToMany(Assignment::class);
+    }
+
+    public function course()
+    {
+        return $this->belongsToMany(Course::class);
+    }
+
+    public function announcement()
+    {
+        return $this->belongsToMany(Announcement::class);
+    }
 }
